@@ -1,0 +1,40 @@
+# ROCK-PAPER-SCISSOR
+
+import random
+
+'''
+r is for rock
+p is for paper
+s is for scissor
+'''
+
+user_dict = {
+    "r" : "rock",
+    "p" : "paper",
+    "s" : "scissor"
+}
+
+while True:
+    user_input = input("Enter your choice(r, s, p) and q to Quit: ")
+
+    if user_input == "q":
+        print("Thanks for Playing, Good Bye!")
+        break
+
+    if user_input not in user_dict:
+        print("Invalid input, TRY AGAIN!")
+        continue
+
+    computer = random.choice(["r", "s", "p"])
+
+    print(f"\nYou chose: {user_dict[user_input]}")
+    print(f"Computer chose: {user_dict[computer]}")
+
+    if user_input == computer:
+        print("Match Draw!")
+    elif(user_input == "r" and computer == "p") or \
+        (user_input == "p" and computer == "s") or \
+        (user_input == "s" and computer == "r"):
+        print("YOU LOSE!")
+    else:
+        print("YOU WON")
